@@ -1,7 +1,5 @@
 #!/bin/sh
-docker build -t ejercicio01:1.0 .
-
-docker run --name html-name-nginx -d -p 8080:80 ejercicio01:1.0
+docker run --name ejercicio01-nginx -p 8080:80 -v /Users/enny/Projects/docker/ejercicio01/html:/usr/share/nginx/html:ro -d nginx:1.22
 
 open http://localhost:8080/name.html
     

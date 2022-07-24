@@ -1,0 +1,46 @@
+Investigar cuantas layers tienen las imágenes 
+
+IMAGE: nicopaez/passwordapi-java:java8-alpine Tiene 4 Layers
+4.4 MB  FROM 8f52818719ad48a 
+Id:     8f52818719ad48a0af558ae2a44eed3cb3fe080f13c9fbdc67ef15667af59196 
+
+87 B  {         echo '#!/bin/sh';         echo 'set -e';         echo;         echo 'dirname "$
+Id:     5fbe5c347e8c517b8e3d3dc7d3869d67f66704543ff53b98ea2f11a513b865a4 
+
+79 MB  set -x     && apk add --no-cache         openjdk8-jre="$JAVA_ALPINE_VERSION"     && [ "$JAVA_HOME"
+Id:     20777a4954834313bbad3031956db94b87f02f88dd3ba92f9b3447d78634d686 
+
+25 MB  #(nop) COPY file:a6e9b80e7469da50e389566bffb8669b6e40df0caeaf327465fb3d0162788101 in /app.jar
+Id:     a009f881a23d513510b079d72a94d170ac1317c58ddf202034edaae0a96dcc36
+
+
+IMAGE: nicopaez/passwordapi-java:java8-fabric Tiene 9 layers
+4.4 MB  FROM 8f52818719ad48a 
+Id:     8f52818719ad48a0af558ae2a44eed3cb3fe080f13c9fbdc67ef15667af59196 
+
+0 B  mkdir -p /deployments
+Id:     82e52b7876f9e0a48fc73fc873aa28488e79f87204fac117cc2ec16f15c294ca                                                              
+99 MB  apk add --update     curl     openjdk8=8.171.11-r0  && rm /var/cache/apk/*  && echo "securerandom.source=file:/dev/
+Id:     792d1d9490684b7277189f9183765d9a4a4d722ec47c585d697dcceab8a4a7ea 
+
+4.0 kB  #(nop) ADD file:0e4d47c8ceb53292ec2698ca6f70c3f2954e747263a46f1b6b1fa70f71d9d9d4 in /opt/run-java-options
+Id:     d9d2fa881d9c24546a8c8ccbe9924db6d918f5a3fbab729c9c7dab3d7a943714 
+
+869 kB  mkdir -p /opt/agent-bond  && curl http://central.maven.org/maven2/io/fabric8/agent-bond-agent/1.2.0/...
+Id:     fcc590211a62b3eda43e997cfd7e0dbc6970c5412780c8e7f03dfbb6af5124bd 
+
+919 B  #(nop) ADD file:19cf38fb1c34ab0ebb2252bb70ed3ea973b69d12e67d2ef36785bb6efa0eb9f4 in /opt/agent-bond/
+Id:     8866c266bb5376fa5df157c041f9ba56e9ee2831d7eef79d56f88d30ac5e90d2 
+
+19 kB  #(nop) COPY file:9664759840f7d23e79c24ae404fe981e8256b6c5145da410f07b11767f9366e3 in /deployments/  
+Id:     e88f0429cfc395756f9d7f327ff3bbca35173786b2e0d35ab53db6afdf2f375a    
+
+19 kB  chmod 755 /deployments/run-java.sh
+Id:     0499de60bce46cb3f9ca2f1eebecdae31ab22e42ecd653338ea9733bf13a66fa 
+
+25 MB  #(nop) COPY file:a6e9b80e7469da50e389566bffb8669b6e40df0caeaf327465fb3d0162788101 in /deployments/app.jar
+Id:     e609339dda0b9c69b0daf2155de258769fab481e2507f13f7f6dedfb744b600d 
+
+¿Tienen estas dos imágenes alguna layer en común?
+
+Si: 8f52818719ad48a0af558ae2a44eed3cb3fe080f13c9fbdc67ef15667af59196
